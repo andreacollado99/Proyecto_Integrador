@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\PC\Desktop\wkpc_ProyectoIntegrador\.metadata\.plugins\org.eclipse.jdt.core
+2951296825.index
+1865797976.index
+3308498898.index

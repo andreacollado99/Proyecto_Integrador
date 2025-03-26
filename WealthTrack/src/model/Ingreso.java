@@ -1,0 +1,72 @@
+package model;
+
+import java.util.Date;
+
+public class Ingreso {
+    private int ingresoId;
+    private int usuarioId;
+    private double cantidad;
+    private Date fecha;
+    private String tipo;
+
+    // Constructor
+    public Ingreso(int ingresoId, int usuarioId, double cantidad, Date fecha, String tipo) {
+        this.ingresoId = ingresoId;
+        this.usuarioId = usuarioId;
+        this.cantidad = cantidad;
+        this.fecha = fecha;
+        this.tipo = tipo;
+    }
+
+    // Getters y Setters
+    public int getIngresoId() {
+        return ingresoId;
+    }
+
+    public void setIngresoId(int ingresoId) {
+        this.ingresoId = ingresoId;
+    }
+
+    public int getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(int usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public double getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(double cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Ingreso{" +
+                "ingresoId=" + ingresoId +
+                ", usuarioId=" + usuarioId +
+                ", cantidad=" + cantidad +
+                ", fecha=" + fecha +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
+}

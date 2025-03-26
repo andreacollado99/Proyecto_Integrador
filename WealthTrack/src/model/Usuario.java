@@ -1,0 +1,80 @@
+package model;
+
+public abstract class Usuario {
+    private int usuarioId;
+    private String nombre;
+    private String apellido;
+    private String email;
+    private String telefono;
+    private String contrasena;
+
+    // Constructor
+    public Usuario(int usuarioId, String nombre, String apellido, String email, String telefono, String contrasena) {
+        this.usuarioId = usuarioId;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.telefono = telefono;
+        this.contrasena = contrasena;
+    }
+
+    // Getters y Setters
+    public int getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(int usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "usuarioId=" + usuarioId +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", email='" + email + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
+}

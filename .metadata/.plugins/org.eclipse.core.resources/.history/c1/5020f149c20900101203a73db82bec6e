@@ -1,0 +1,15 @@
+package model;
+
+public class Categoria {
+
+	private int IdIngreso;
+	private int IdGasto;
+	
+	public Categoria(int idIngreso, int idGasto) {
+		IdIngreso = idIngreso;
+		IdGasto = idGasto;
+	}
+	
+	
+	
+}

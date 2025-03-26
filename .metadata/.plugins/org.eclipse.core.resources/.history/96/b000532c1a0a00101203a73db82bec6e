@@ -1,0 +1,36 @@
+package model;
+
+public class Categoria {
+    private int ingresoId;
+    private int gastoId;
+
+    // Constructor
+    public Categoria(int ingresoId, int gastoId) {
+        this.ingresoId = ingresoId;
+        this.gastoId = gastoId;
+    }
+
+    // Getters y Setters
+    public int getIngresoId() {
+        return ingresoId;
+    }
+
+    public void setIngresoId(int ingresoId) {
+        this.ingresoId = ingresoId;
+    }
+
+    public int getGastoId() {
+        return gastoId;
+    }
+
+    public void setGastoId(int gastoId) {
+        this.gastoId = gastoId;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria:" +
+                "\n\tingresoId= " + ingresoId +
+                "\n\tgastoId= " + gastoId;
+    }
+}
