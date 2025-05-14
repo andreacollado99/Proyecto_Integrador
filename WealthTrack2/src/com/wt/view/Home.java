@@ -1,0 +1,154 @@
+package com.wt.view;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.Window;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+import com.wt.control.ControlLogin;
+
+import javax.swing.JButton;
+
+public class Home extends JFrame {
+	
+	public static final int ANCHO = 850;
+    public static final int ALTO = 650;
+    private static final int ALTO_PNL_BTN = 47;
+	private static final int ALTO_PNL_LOGO = 90;
+    public static final String ACT_COM_BTN_GESTIONES = "GESTIONES";
+    public static final String ACT_COM_BTN_MOVIMIENTOS = "MOVIMIENTOS";
+    public static final String ACT_COM_BTN_INVERSIONES = "INVERSIONES";
+	
+	private JLabel lblImagen;
+    private JLabel lblFondo;
+    private JScrollPane scrMovimientos;
+    private JScrollPane scrGestiones;
+    private JScrollPane scrInversiones;
+	private JButton btnGestiones;
+	private JButton btnMovimientos;
+	private JButton btnInversiones;
+	private JPanel panelContenido;
+	private JScrollPane scrpContenedorFondo;
+	private JScrollPane scrContenedorSeg;
+	private JPanel pnlLogo;
+	private JPanel pnlBotones;
+	private JPanel pnlFondo;
+	private JLabel lblFondo2;
+	
+	
+	public Home() {
+        super("Wealhtrack");
+        initComponents();
+    }
+
+	private void initComponents() {
+		getContentPane().setLayout(new BorderLayout(0, 0));
+		
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(ANCHO, ALTO);
+        // Centrar la ventana
+        Dimension dimPantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension dimVentana = new Dimension(ANCHO, ALTO);
+        setLocation((dimPantalla.width - dimVentana.width) / 2, (dimPantalla.height - dimVentana.height) / 2); 
+
+        
+        
+        /*JPanel panelCabecera = new JPanel();
+        panelCabecera.setPreferredSize(new Dimension(ANCHO, ALTO_PNL_LOGO + ALTO_PNL_BTN));
+        panelCabecera.setLayout(new BorderLayout(0, 0));
+        getContentPane().add(panelCabecera, BorderLayout.NORTH);*/
+        
+        pnlLogo = new JPanel();
+        //pnlLogo.setBounds(0, 0, ANCHO, ALTO_PNL_LOGO);
+        pnlLogo.setPreferredSize(new Dimension(ANCHO, ALTO_PNL_LOGO));
+        pnlLogo.setLayout(null);
+        //pnlLogo.setSize(ANCHO, ALTO_PNL_LOGO);
+        //panelCabecera.add(pnlLogo, BorderLayout.NORTH);
+        getContentPane().add(pnlLogo, BorderLayout.NORTH);
+        
+        JLabel lblNewLabel = new JLabel("WealthTrack");
+        lblNewLabel.setBounds(287, 24, 179, 40);
+        pnlLogo.add(lblNewLabel);
+        lblNewLabel.setForeground(new Color(0, 0, 255));
+        lblNewLabel.setFont(new Font("Palatino Linotype", Font.PLAIN, 29));
+
+        lblImagen = new JLabel("");
+        lblImagen.setBounds(461, 0, 97, 90);
+        pnlLogo.add(lblImagen);
+        lblImagen.setIcon(new ImageIcon(new ImageIcon(Login.class.getResource("/img/logo.png")).getImage()
+                .getScaledInstance(83, 68, Image.SCALE_SMOOTH)));
+
+        JLabel lblNewLabel_1 = new JLabel("Tu socio Financiero en un Click");
+        lblNewLabel_1.setBounds(287, 50, 345, 14);
+        pnlLogo.add(lblNewLabel_1);
+        lblNewLabel_1.setForeground(new Color(0, 0, 139));
+
+        lblFondo = new JLabel("");
+        lblFondo.setIcon(new ImageIcon(Login.class.getResource("/img/fondo.png")));
+        lblFondo.setBounds(0, 0, ANCHO, ALTO_PNL_LOGO);
+        pnlLogo.add(lblFondo);
+        
+        pnlBotones = new JPanel();
+        pnlBotones.setLayout(null);
+        //pnlBotones.setBounds(0, 90, ANCHO, ALTO_PNL_BTN);
+        pnlBotones.setPreferredSize(new Dimension(ANCHO, ALTO_PNL_BTN));
+        //pnlBotones.setSize(ANCHO, ALTO_PNL_BTN);
+        //panelCabecera.add(pnlBotones, BorderLayout.CENTER);
+        getContentPane().add(pnlBotones, BorderLayout.CENTER);
+        
+        btnGestiones = new JButton(ACT_COM_BTN_GESTIONES);
+        btnGestiones.setBounds(0, 0, 274, 47);
+        btnGestiones.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        pnlBotones.add(btnGestiones);
+        
+        btnMovimientos = new JButton(ACT_COM_BTN_MOVIMIENTOS);
+        btnMovimientos.setBounds(273, 0, 295, 47);
+        btnMovimientos.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        pnlBotones.add(btnMovimientos);   
+        
+        btnInversiones = new JButton(ACT_COM_BTN_INVERSIONES);
+        btnInversiones.setBounds(564, 0, 286, 47);
+        btnInversiones.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        pnlBotones.add(btnInversiones);
+        
+        scrContenedorSeg = new JScrollPane();
+        /*scrContenedorSeg.setBounds(0, 135, 850, 488);
+        panelContenido.add(scrContenedorSeg);*/
+        
+        pnlFondo = new JPanel();
+        pnlFondo.setPreferredSize(new Dimension(ANCHO, ALTO - ALTO_PNL_LOGO - ALTO_PNL_BTN - 35)); // restamos 30 por el marco del Jframe
+        pnlFondo.setLayout(null);
+        
+        lblFondo2 = new JLabel("");
+        lblFondo2.setIcon(new ImageIcon(Login.class.getResource("/img/fondo.png")));
+        lblFondo2.setBounds(0, 0, ANCHO, ALTO - ALTO_PNL_LOGO - ALTO_PNL_BTN - 35);
+        pnlFondo.add(lblFondo2);
+        
+        cargarPanel(pnlFondo);   
+        
+        getContentPane().add(scrContenedorSeg, BorderLayout.SOUTH);
+        
+        
+	}
+
+	public void setcontrolador(ControlLogin cl) {
+		btnGestiones.addActionListener(cl);
+		btnMovimientos.addActionListener(cl);
+		btnInversiones.addActionListener(cl);
+		
+	}
+	
+	public void cargarPanel(JPanel panelSeguimiento) {
+		scrContenedorSeg.setViewportView(panelSeguimiento);
+		
+	}
+}
